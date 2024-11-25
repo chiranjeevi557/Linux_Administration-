@@ -1,0 +1,40 @@
+Linux:
+
+All users are present in /home directory
+
+u need to be in home directory
+
+1.creating users
+useradd chiru(it creates default uid, groupid, groups) 
+
+useradd -g QA -s /bin/bash -c "Part of QA Team" -m -d /home/victor victor(it creates user with own attributes)
+
+id chiru
+uid=1004(shan) gid=1004(shan) groups=1004(shan)
+
+2.deleting users
+userdel chiru(user deleted but still data exist)
+
+userdel -r(It removes entire user data also)
+
+userdel -f( force delete even if the user is logged in )
+
+3.modify users
+  
+usermod -G <group_name> <user_name> (to add user to a new group,but default group will remain same)
+
+usermod -g <group_name> <user-name> (changing default group name)
+
+-L,-U(Lock/Unlock a user)
+
+Imp files for groups:
+
+less /etc/group- groups and users in it
+less /etc/passwd
+less /etc/shadow- last password changed, expired date
+
+passwd username(creating password for user)
+
+4.creating group
+ groupadd PROD
+ groupdelete PROD
